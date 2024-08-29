@@ -33,4 +33,10 @@ export class SpotifyService {
     console.log(url);
     return this.http.get(url, { headers });
   }
+  getAlbum(id: string) {
+    const url = `https://api.spotify.com/v1/albums/${id}`;
+    const headers = new HttpHeaders({Authorization: environment.oauthToken});
+    console.log(url);
+    return this.http.get(url, { headers });
+  }
 }
